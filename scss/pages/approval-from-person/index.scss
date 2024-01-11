@@ -1,0 +1,39 @@
+.approval-from-person {
+   // .approval-from-person__page
+
+   &__page {
+   }
+
+   // .approval-from-person__select
+
+   &__select {
+      max-width: 32rem;
+      width: 100%;
+      @media (max-width: $mobile) {
+         max-width: 100%;
+      }
+   }
+
+   // .approval-from-person__table-tr
+
+   &__table tr {
+      grid-template-columns: repeat(2, minmax(12rem, 63rem)) 11.5rem;
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+}
+
+.new-deal-page__table-del-btn {
+   cursor: pointer;
+   fill: #b1c7ff;
+   stroke: #b1c7ff;
+   transition: all 0.2s ease-in;
+   @media (min-width: $tablet) {
+      &:hover {
+         fill: #4d49fe;
+         stroke: #4d49fe;
+      }
+   }
+}

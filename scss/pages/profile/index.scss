@@ -1,0 +1,210 @@
+#imageBlock {
+   width: 32rem;
+   height: 32rem;
+   border-radius: 1.6rem;
+
+   position: relative;
+   border: 0.1rem dashed #4d49fe;
+   &.active {
+      border: 0.1rem dashed transparent;
+   }
+   @media (max-width: $pc) {
+      width: 24rem;
+      height: 24rem;
+   }
+   @media (max-width: $mobile) {
+      width: 18rem;
+      height: 18rem;
+   }
+}
+
+#selectedImage {
+   width: 100%;
+   height: 100%;
+   display: block;
+   object-fit: cover;
+   position: relative;
+   border-radius: 1.6rem;
+   &::after {
+      content: "Загрузите или перетащите изображение";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: #b1c7ff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1.6rem;
+      background-color: #f0f6fa;
+   }
+}
+
+#fileInput {
+   display: none;
+}
+
+.actionButton {
+   margin-top: 10px;
+   padding: 5px 10px;
+
+   cursor: pointer;
+   display: none;
+
+   background-color: transparent;
+   border: transparent;
+}
+
+.profile {
+   // .profile__user-info
+
+   &__user-info {
+      display: flex;
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+      }
+   }
+   // .profile__user-contact
+
+   &__user-contact {
+      display: grid;
+      grid-template-columns: minmax(12rem, 32rem) minmax(12rem, 32rem);
+      gap: 2.4rem;
+      @media (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   &__groupe {
+      display: grid;
+      grid-template-columns: minmax(12rem, 32rem) minmax(12rem, 21rem) minmax(
+            12rem,
+            21rem
+         );
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+   // .profile__user-region
+
+   &__user-region {
+      display: grid;
+      grid-template-columns: minmax(12rem, 21rem) minmax(12rem, 32rem) minmax(
+            12rem,
+            32rem
+         );
+      gap: 2.4rem;
+      @media (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   // .profile__user-address
+
+   &__user-address {
+      display: grid;
+      grid-template-columns: minmax(12rem, 32rem) minmax(8rem, 10rem) minmax(
+            12rem,
+            21rem
+         );
+      gap: 2.4rem;
+      @media (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   &__table {
+      tr {
+         grid-template-columns: repeat(4, minmax(14rem, 1fr)) 12rem;
+         @media (max-width: $pc) {
+            display: flex;
+            flex-direction: column;
+         }
+         td {
+            svg {
+               fill: #b1c7ff;
+               stroke: #b1c7ff;
+               cursor: pointer;
+               transition: all 0.2s ease-in;
+               @media (min-width: $tablet) {
+                  &:hover {
+                     fill: #4d49fe;
+                     stroke: #4d49fe;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &__bottom-table {
+      tr {
+         grid-template-columns: repeat(3, minmax(14rem, 1fr), 7.5rem);
+         @media (max-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+         }
+         td {
+            svg {
+               fill: #b1c7ff;
+               stroke: #b1c7ff;
+               cursor: pointer;
+               transition: all 0.2s ease-in;
+               @media (min-width: $tablet) {
+                  &:hover {
+                     fill: #4d49fe;
+                     stroke: #4d49fe;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &__table-head {
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+   &__table-tr {
+   }
+}
+.profile-user-info {
+   // .profile-user-info__avatar
+
+   &__avatar {
+      position: relative;
+      @media (max-width: $mobile) {
+         margin: 0 auto;
+      }
+   }
+   &__btn-cnt {
+      display: flex;
+
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      z-index: 10;
+   }
+   // .profile-user-info__fio
+
+   &__fio {
+      display: flex;
+      flex-direction: column;
+      max-width: 55rem;
+      width: 100%;
+      gap: 2.4rem;
+
+      .seconde-title {
+         margin-bottom: 1.2rem;
+      }
+   }
+}

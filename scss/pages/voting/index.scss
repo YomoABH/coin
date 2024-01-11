@@ -1,0 +1,122 @@
+.voting-page {
+   // .voting-page__wrapper
+
+   &__wrapper {
+      display: grid;
+      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      @media (max-width: $pc) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .voting-page__info
+
+   &__info {
+   }
+
+   // .voting-page__table
+
+   &__table {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow: hidden;
+      border-radius: 1.3rem;
+      @media (max-width: $pc) {
+         display: flex;
+      }
+   }
+
+   // .voting-page__btn
+
+   &__btn {
+      margin-top: 4rem;
+      text-align: center;
+   }
+
+   // .voting-page__mail
+
+   &__mail {
+      .seconde-title {
+         margin-bottom: 2rem;
+      }
+   }
+
+   // .voting-page__mail-btn
+
+   &__mail-btn {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.4rem 4rem;
+      text-align: center;
+   }
+}
+.voting-page-table {
+   // .voting-page-table__head
+
+   &__head {
+      width: 100%;
+      max-width: 21rem;
+      border-radius: 0;
+      @media (max-width: $mobile) {
+         display: block;
+      }
+   }
+
+   // .voting-page-table__head-row
+
+   &__head-row {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: start;
+   }
+
+   // .voting-page-table__body
+
+   &__body {
+      display: grid;
+      gap: 0;
+      grid-template-columns: minmax(12rem, 1fr) minmax(12rem, 1fr);
+      @media (max-width: $mobileSmall) {
+         grid-template-columns: minmax(8rem, 1fr) minmax(8rem, 1fr);
+      }
+   }
+
+   // .voting-page-table__body-row
+
+   &__body-row {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      &--end {
+         grid-column-start: 1;
+         grid-column-end: 3;
+         td {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+      }
+      td:nth-child(odd) {
+         background-color: #f6fbff;
+      }
+      &:nth-child(2n) {
+         background-color: transparent;
+      }
+   }
+
+   td,
+   th {
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      @media (max-width: $mobileSmall) {
+         padding: 0.6rem 0.8rem;
+      }
+   }
+}

@@ -1,0 +1,113 @@
+.new-deal-page {
+   // .new-deal-page__id-wrapper--1
+
+   &__id-wrapper--1 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(15rem, 32rem));
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         gap: 1.6rem;
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .new-deal-page__id-wrapper--2
+
+   &__id-wrapper--2 {
+      display: grid;
+      grid-template-columns:
+         minmax(15rem, 32rem)
+         repeat(2, minmax(15rem, 21rem));
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         gap: 1.6rem;
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .new-deal-page__id-input
+
+   &__id-input {
+   }
+
+   // .new-deal-page__date-wrapper
+
+   &__date-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(15rem, 21rem));
+
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         gap: 1.6rem;
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .new-deal-page__date-input
+
+   &__date-input {
+   }
+
+   // .new-deal-page__descr-textarea
+
+   &__descr-textarea {
+      width: 100%;
+      max-width: 102rem;
+      @media (max-width: $tablet) {
+         max-width: auto;
+      }
+   }
+
+   &__table {
+   }
+
+   // .new-deal-page__table-tr
+
+   &__table-tr {
+      grid-template-columns: repeat(3, minmax(15rem, 41.5rem)) 11.5rem;
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+         th,
+         td {
+            width: 100%;
+            max-width: 40rem;
+         }
+      }
+   }
+
+   // .new-deal-page__table-del-btn
+
+   &__table-del-btn {
+   }
+
+   &__select-list {
+      display: flex;
+      gap: 2.4rem;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+      }
+   }
+
+   &__descr-input {
+      width: 100%;
+      max-width: 55.5rem;
+   }
+
+   &__descr-textarea {
+      max-width: 102rem;
+      width: 100%;
+   }
+}
+.hidden-div {
+   padding: 2.4rem 0;
+   display: none;
+   span {
+      display: block;
+      margin-bottom: 1.6rem;
+   }
+   &__select {
+      width: 100%;
+      max-width: 32rem;
+   }
+}

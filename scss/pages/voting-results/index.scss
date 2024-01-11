@@ -1,0 +1,11 @@
+.voting-results {
+   // .voting-results__label
+
+   &__label {
+      width: 100%;
+      max-width: 32rem;
+      @media (max-width: $mobile) {
+         max-width: 100%;
+      }
+   }
+}

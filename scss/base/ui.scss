@@ -1,0 +1,733 @@
+.page {
+   display: grid;
+   grid-template-columns: 36rem 1fr;
+   @media (max-width: $pc) {
+      grid-template-columns: 28rem 1fr;
+   }
+   @media (max-width: $tablet) {
+      grid-template-columns: 18rem 1fr;
+   }
+   @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+   }
+}
+
+.main-cnt {
+   width: 100%;
+   padding: 4.8rem 4.8rem 9.6rem 4.8rem;
+   display: flex;
+   flex-direction: column;
+   gap: 4.8rem;
+   @media (max-width: $pc) {
+      padding: 3.2rem 3.2rem 8.8rem 3.2rem;
+      gap: 3.2rem;
+   }
+   @media (max-width: $tablet) {
+      padding: 2.4rem 2.4rem 8.8rem 2.4rem;
+      gap: 2.4rem;
+   }
+   @media (max-width: $tablet) {
+      padding: 1rem 1rem 4.4rem 1rem;
+   }
+}
+
+// общая форма для страницы
+.page-form {
+   display: flex;
+   flex-direction: column;
+   gap: 4.8rem;
+   @media (max-width: $pc) {
+      gap: 3.2rem;
+   }
+   @media (max-width: $tablet) {
+      gap: 2.4rem;
+   }
+
+   .submit-btn {
+      width: 27rem;
+      padding: 2.4rem 9.4rem;
+      border: none;
+      border-radius: 0.8rem;
+      background: #4d49fe;
+
+      cursor: pointer;
+
+      color: #fff;
+      font-weight: 600;
+
+      transition: all 0.3s linear;
+      @media (max-width: $mobileSmall) {
+         width: 100%;
+         padding: 1.8rem 9.4rem;
+      }
+      @media (min-width: $mobile) {
+         &:hover {
+            background-color: #2c29cc;
+         }
+      }
+   }
+}
+// место где отрисовывается страница
+.content-aria {
+   width: 100%;
+   height: 100vh;
+
+   overflow-y: scroll;
+   &::-webkit-scrollbar {
+      width: 0.4rem;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: #b1c7ff;
+      border-radius: 1rem;
+   }
+}
+// главный заголовок
+.main-title {
+   color: #050731;
+   font-size: 2.8rem;
+   font-weight: 500;
+   line-height: 128.571%;
+}
+// общая плашка дл контента
+.content-container {
+   display: flex;
+   flex-direction: column;
+   gap: 3.6rem;
+   padding: 4.8rem;
+
+   border-radius: 2.4rem;
+   border: 0.1rem solid #e4efff;
+   background: #fff;
+   @media (max-width: $pc) {
+      padding: 2.4rem;
+   }
+   @media (max-width: $tablet) {
+      padding: 1.4rem;
+   }
+   @media (max-width: $tablet) {
+      padding: 1rem;
+   }
+}
+// заголовок разделов
+.seconde-title {
+   color: #050731;
+   font-size: 1.8rem;
+   font-weight: 500;
+   line-height: 122.222%;
+}
+// стили для хедера таблиц
+.header-item {
+   text-align: left;
+   background: #e4efff;
+   border: 0;
+
+   width: 100%;
+   padding: 1.6rem 2.4rem;
+
+   -webkit-border-top-left-radius: 12px;
+   -webkit-border-top-right-radius: 12px;
+   -moz-border-radius-topleft: 12px;
+   -moz-border-radius-topright: 12px;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   @media (max-width: $tablet) {
+      padding: 1rem 0.5rem;
+   }
+}
+// кастомный селект для всех блоков
+.custom-select {
+   position: relative;
+   width: 100%;
+   text-overflow: ellipsis;
+   .select-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      text-overflow: ellipsis;
+      width: 100%;
+      height: 4rem;
+      padding: 1rem 1.6rem;
+      overflow: hidden;
+
+      border-radius: 0.8rem;
+      border: 0.1rem solid #d0d0dd;
+      background-color: transparent;
+
+      .selected-item {
+         flex-grow: 1;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+
+         color: #aaaab7;
+         transition: all 0.3s linear;
+         @media (min-width: $mobile) {
+            &:hover {
+               color: #4e4e7c;
+            }
+         }
+      }
+
+      .arrow {
+         margin-left: 8px;
+         transition: all 0.1s linear;
+         &.active {
+            transform: rotateX(180deg);
+         }
+      }
+   }
+
+   .options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 0.8rem 0.8rem;
+
+      li {
+         color: #aaaab7;
+         padding: 1rem 1.6rem;
+
+         cursor: pointer;
+
+         &:hover {
+            background-color: #f0f6fa;
+         }
+      }
+   }
+
+   &.active {
+      .select-box {
+         border-radius: 0.8rem 0.8rem 0 0;
+         border: 0.1rem solid #d0d0dd;
+         .selected-item {
+            color: #050731;
+         }
+      }
+      .options {
+         border: 0.1rem solid #d0d0dd;
+
+         li {
+            color: #050731;
+         }
+      }
+   }
+}
+// комментарий
+.textarea {
+   border-radius: 0.8rem;
+   border: 0.1rem solid #d0d0dd;
+   padding: 1rem 1.6rem;
+
+   color: #aaaab7;
+   font-size: 1.6rem;
+   font-weight: 300;
+   resize: none;
+   transition: all 0.3s linear;
+   &::placeholder {
+      color: #aaaab7;
+      font-size: 1.6rem;
+      font-weight: 300;
+   }
+   @media (min-width: $mobile) {
+      &:hover {
+         color: #4e4e7c;
+      }
+   }
+   &:focus {
+      color: #050731;
+   }
+}
+
+// кастомный инпут
+.input {
+   padding: 1rem 1.6rem;
+   border-radius: 0.8rem;
+   border: 0.1rem solid #d0d0dd;
+   line-height: 125%; /* 125% */
+   color: #aaaab7;
+   font-size: 1.6rem;
+   font-weight: 300;
+   height: 4rem;
+   transition: 0.2s all ease-in;
+   &::placeholder {
+      transition: 0.2s all ease-in;
+
+      color: #aaaab7;
+      font-size: 1.6rem;
+      font-weight: 300;
+   }
+   &:focus {
+      color: #050731;
+   }
+   @media (min-width: $tablet) {
+      &:hover {
+         color: #050731;
+         &::placeholder {
+            color: #4e4e7c;
+         }
+      }
+   }
+}
+
+// стили для файлов
+.custom-file-upload {
+   border-radius: 1.6rem;
+   border: 0.1rem dashed #b1c7ff;
+   cursor: pointer;
+
+   color: #b1c7ff;
+   font-weight: 600;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.custom-file-upload input {
+   display: none;
+}
+
+ul {
+   list-style: none;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 5rem;
+   @media (max-width: $mobileSmall) {
+      grid-template-columns: 1fr;
+   }
+}
+
+li {
+   margin-bottom: 8px;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.delete-btn {
+   cursor: pointer;
+   color: #e74c3c;
+   margin-left: 10px;
+}
+// поле ввода с возможностью редактирования
+.input-container {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem;
+
+   position: relative;
+}
+.text-input {
+   padding: 1rem 3rem 1rem 1.6rem;
+   border-radius: 0.8rem;
+   border: 0.1rem solid #d0d0dd;
+   background: #fff;
+
+   width: 100%;
+
+   color: #050731;
+   /* Body1 */
+   font-weight: 300;
+   line-height: 125%; /* 125% */
+}
+.edit-button {
+   width: 3rem;
+   height: 3rem;
+
+   cursor: pointer;
+
+   background-color: transparent;
+   border: none;
+   background: url("../img/edit.svg") center no-repeat;
+
+   &.edit {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      background: url("../img/save.svg") center no-repeat;
+   }
+}
+.text-content {
+}
+
+// стили таблицы
+thead,
+tbody,
+th,
+td,
+tr {
+   display: block;
+}
+
+thead {
+   text-align: left;
+   background: #e4efff;
+   border: 0;
+
+   width: 100%;
+
+   -webkit-border-top-left-radius: 12px;
+   -webkit-border-top-right-radius: 12px;
+   -moz-border-radius-topleft: 12px;
+   -moz-border-radius-topright: 12px;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+thead tr {
+}
+
+th {
+   color: var(--main-dark-light, #4e4e7c);
+   padding: 1.6rem 2.4rem;
+   font-weight: 500;
+   line-height: 125%; /* 125% */
+   border: 0;
+   background-color: transparent;
+   &.sm {
+   }
+   @media (max-width: $pc) {
+      padding: 1.2rem 1.4rem;
+   }
+}
+
+tbody {
+   display: flex;
+   flex-direction: column;
+}
+tbody tr {
+}
+tr {
+   display: grid;
+   align-items: center;
+   grid-template-columns: 1fr 1fr 1fr 115px;
+   @media (max-width: $mobile) {
+      grid-template-columns: 60%;
+      justify-content: center;
+   }
+   @media (max-width: $mobileSmall) {
+      grid-template-columns: 90%;
+   }
+}
+tr:nth-child(2n) {
+   background-color: #f6fbff;
+}
+tr td:nth-child(1) {
+   text-wrap: wrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+td {
+   padding: 1.6rem 2.4rem;
+   text-wrap: wrap;
+   text-overflow: ellipsis;
+   @media (max-width: $pc) {
+      padding: 1.2rem 1.4rem;
+   }
+   @media (max-width: $mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &.sm {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+}
+
+// статусные наклейки документов
+.information-page-table {
+   // .information-page-table__item
+
+   &__item {
+   }
+
+   // .information-page-table__item-name
+
+   &__item-name {
+   }
+
+   // .information-page-table__item-type
+
+   &__item-type {
+   }
+
+   // .information-page-table__item-location
+
+   &__item-location {
+   }
+
+   // .information-page-table__item-save
+
+   &__item-save {
+   }
+}
+.status-document-label {
+   width: 100%;
+   padding: 1rem 1.6rem;
+   text-align: center;
+   border-radius: 0.8rem;
+   font-weight: 600;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+.status-document-label--approved {
+   background: #c0f6bc;
+   color: #71c963;
+}
+.status-document-label--disapproved {
+   background-color: #ffcece;
+   color: #f68e8e;
+}
+.status-document-label--comes-into-effect {
+   background-color: #cdebff;
+   color: #6bc7fb;
+}
+.status-document-label--cancel {
+   background-color: #eeeeee;
+   color: #d1d1d1;
+}
+.status-document-label--introduction {
+   background-color: #fdffbb;
+   color: #e9d73c;
+}
+.status-document-label--archive {
+   background-color: #e7d3ff;
+   color: #d0a0ff;
+}
+
+// поле поиска
+.search-container {
+   display: flex;
+   max-width: 440px;
+   width: 100%;
+   margin: 20px; /* Добавлен отступ для наглядности */
+   position: relative;
+
+   @media (min-width: $tablet) {
+      &:hover {
+         .search-input {
+            &::placeholder {
+               color: #5a87fa;
+            }
+         }
+
+         .search-button {
+            svg {
+               stroke: #5a87fa;
+            }
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      max-width: 90%;
+   }
+}
+
+.search-input {
+   width: 100%;
+   box-sizing: border-box;
+   height: 4rem;
+   padding: 0 4rem;
+
+   border: 0;
+   border-radius: 0.8rem;
+   background: #f6fbff;
+
+   transition: all 0.2s ease-in;
+   &::placeholder {
+      font-weight: 300;
+      color: #b1c7ff;
+      transition: color 0.2s ease-in;
+   }
+   &:valid {
+      padding: 0 2rem;
+   }
+   &:valid + .search-button {
+      display: none; /* Изменение цвета кнопки при валидном вводе */
+   }
+}
+
+.search-button {
+   padding: 1rem;
+   border: none;
+   background-color: transparent;
+   color: #fff;
+   cursor: pointer;
+   outline: none;
+
+   position: absolute;
+   left: 0;
+   top: 0.3rem;
+
+   svg {
+      stroke: #b1c7ff;
+      transition: stroke 0.2s ease-in;
+   }
+}
+
+// общая кнопка
+.main-btn {
+   padding: 2.4rem 10rem;
+
+   font-size: 1.5rem;
+   color: #2c29cc;
+
+   cursor: pointer;
+
+   background: transparent;
+   border-radius: 0.8rem;
+   border: 0.1rem solid #2c29cc;
+
+   transition: all 0.2s ease-in;
+
+   @media (min-width: $tablet) {
+      &:hover {
+         border: 0.1rem solid #4d49fe;
+         color: #4d49fe;
+      }
+   }
+   @media (max-width: $tablet) {
+      padding: 2rem 8rem;
+   }
+   @media (max-width: $mobile) {
+      padding: 1.6rem 6rem;
+   }
+   // #4D49FE
+}
+// плашка кнопок на страницах сделок
+.transaction-stage-list {
+   width: 100%;
+
+   display: flex;
+   align-items: center;
+   gap: 1.6rem;
+
+   overflow-x: scroll;
+
+   &::-webkit-scrollbar {
+      width: 0;
+   }
+
+   // .transaction-stage-list__item
+
+   &__item {
+      width: 16rem;
+      button {
+         height: 6rem;
+
+         color: #fff;
+         font-weight: 600;
+
+         cursor: pointer;
+
+         background-color: #5a87fa;
+         border: 0;
+         border-radius: 8px;
+
+         transition: all 0.2s ease-in;
+         @media (min-width: $tablet) {
+            &:hover {
+               background-color: #2c29cc;
+            }
+         }
+      }
+   }
+
+   // .transaction-stage-list__item--active
+
+   &__item--active {
+      button {
+         background-color: #2c29cc;
+      }
+   }
+
+   // .transaction-stage-list__item--inactive
+
+   &__item--inactive {
+      button {
+         color: #eeeeee;
+         background-color: #aaaab7;
+      }
+   }
+}
+
+// кастомный список чекбоксов
+
+.checkbox-list {
+   display: flex;
+   gap: 3.6rem;
+   flex-direction: column;
+}
+
+.checkbox-item {
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+   label {
+      font-weight: 500;
+      color: #4e4e7c;
+   }
+}
+
+// наклейки почты
+.mail-label {
+   display: flex;
+   align-items: center;
+
+   gap: 0.5rem;
+
+   border-radius: 3.6rem;
+   background: #e4efff;
+   // .mail-label__avatar
+
+   &__avatar {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      font-size: 1rem;
+      font-weight: 700;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 1.6rem;
+   }
+
+   // .mail-label__email
+
+   &__email {
+      color: #050731;
+      font-weight: 500;
+      font-size: 1.3rem;
+   }
+
+   // .mail-label__btn
+
+   &__btn {
+      cursor: pointer;
+      padding: 0.6rem 0.4rem 0.4rem 0.4rem;
+   }
+}
+.textInput {
+   border: 0;
+}

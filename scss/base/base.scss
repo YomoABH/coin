@@ -1,0 +1,19 @@
+html,
+body {
+   min-height: 100vh;
+}
+
+html {
+   font-size: 10px;
+   font-family: "Montserrat", sans-serif;
+}
+
+body {
+   font-size: 1.6rem;
+   font-weight: 300;
+   color: $fonsts-color;
+   background-color: $blue-dark;
+   @media (max-width: $tablet) {
+      font-size: 1.4rem;
+   }
+}

@@ -1,0 +1,54 @@
+.create-shareholders-list-page {
+   // .create-shareholders-list-page__tr
+
+   &__tr {
+      grid-template-columns:
+         minmax(11rem, 27rem) minmax(11rem, 27rem) minmax(11rem, 18rem)
+         minmax(11rem, 27rem) minmax(11rem, 15rem) minmax(11rem, 15rem);
+      @media (max-width: $tablet) {
+         display: flex;
+         flex-direction: column;
+      }
+      td,
+      th {
+         padding: 1.6rem 0.8rem;
+         font-size: 1.4rem;
+         text-overflow: ellipsis;
+         text-wrap: wrap;
+         overflow: hidden;
+      }
+   }
+   @media (max-width: $tablet) {
+      thead {
+         display: none;
+      }
+   }
+
+   &__svg {
+      svg {
+         fill: #b1c7ff;
+         stroke: #b1c7ff;
+         transition: all 0.2s ease-in;
+      }
+      @media (min-width: $tablet) {
+         &:hover {
+            svg {
+               cursor: pointer;
+               fill: #5a87fa;
+               stroke: #5a87fa;
+            }
+         }
+      }
+   }
+
+   // .create-shareholders-list-page__btns
+
+   &__btns {
+      display: flex;
+      gap: 7rem;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         gap: 2rem;
+      }
+   }
+}

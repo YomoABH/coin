@@ -1,0 +1,140 @@
+.modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0s, opacity 0.3s;
+   z-index: 1000;
+}
+
+.modal-content {
+   width: 100%;
+   max-width: 65rem;
+   padding: 4rem;
+   border-radius: 2.4rem;
+   border: 1px solid #e4efff;
+   background: #fff;
+   position: relative;
+   h2 {
+      margin-bottom: 3.6rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+   }
+}
+
+.close-button {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 18px;
+   color: #333;
+
+   &.save {
+   }
+}
+
+.closeButton.save {
+   border-radius: 8px;
+   background: #4d49fe;
+   padding: 24px 94px;
+   color: #fff;
+   border: transparent;
+   margin-top: 3.6rem;
+   transition: all 0.2s ease-in;
+   @media (min-width: $tablet) {
+      &:hover {
+         cursor: pointer;
+         opacity: 0.9;
+      }
+   }
+}
+.openButton {
+   cursor: pointer;
+   border: transparent;
+   background-color: transparent;
+
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+
+   span {
+      color: #4d49fe;
+      font-size: 1.5rem;
+      font-weight: 600;
+   }
+}
+
+.deal {
+   // .deal__btn-cnt
+
+   &__btn-cnt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: $pc) {
+         flex-direction: column;
+         align-items: start;
+      }
+   }
+
+   // .deal__table
+
+   &__table {
+      overflow-x: scroll;
+      display: block;
+      width: 100%;
+      max-width: 144rem;
+      &::-webkit-scrollbar {
+         height: 0.4rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: #b1c7ff;
+         border-radius: 1rem;
+      }
+   }
+
+   // .deal__table-head
+
+   &__table-head {
+      th {
+         height: 100%;
+         background-color: #e4efff;
+         display: flex;
+         align-items: center;
+      }
+   }
+   &__table-tr {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(18rem, 21rem));
+      td {
+         overflow: hidden;
+      }
+      @media (max-width: $mobile) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   // .deal__table-tr
+
+   &__table-tr {
+   }
+
+   // .deal__table-body
+
+   &__table-body {
+   }
+
+   &__checkbox-list {
+      gap: 0.8rem;
+   }
+}

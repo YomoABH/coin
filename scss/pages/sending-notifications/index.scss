@@ -1,0 +1,27 @@
+.sending-notifications {
+   // .sending-notifications__page
+
+   &__page {
+   }
+
+   // .sending-notifications__input-wrapper
+
+   &__input-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      border: 0.8rem;
+      background-color: #f6fbff;
+   }
+
+   // .sending-notifications__textarea
+
+   &__textarea {
+   }
+}
+
+.mail-label-container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+}

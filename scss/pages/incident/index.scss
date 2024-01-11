@@ -1,0 +1,38 @@
+.custom-select {
+}
+.incident-page {
+   // .incident-page__textarea
+   &__select {
+      width: 32rem;
+      @media (max-width: $mobileSmall) {
+         width: 100%;
+      }
+   }
+
+   &__textarea {
+      max-width: 67rem;
+      height: 12rem;
+   }
+
+   // .incident-page__file-list
+
+   &__file-list {
+      max-width: 67rem;
+      @media (max-width: $mobile) {
+         max-width: 100%;
+      }
+   }
+
+   // .incident-page__file-upload
+
+   &__file-upload {
+      height: 6.5rem;
+      padding: 1.6rem;
+   }
+}
+
+// ============================================================================
+// ============================================================================
+
+// ============================================================================
+// ============================================================================

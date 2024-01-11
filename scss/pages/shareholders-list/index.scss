@@ -1,0 +1,42 @@
+.shareholders-list-page tr {
+   grid-template-columns:
+      minmax(100px, 356px) minmax(100px, 150px) minmax(100px, 356px) minmax(
+         100px,
+         356px
+      )
+      minmax(100px, 150px);
+   @media (max-width: $tablet) {
+      th,
+      td {
+         padding: 1.2rem 0.5rem;
+      }
+   }
+
+   @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+   }
+}
+.shareholders-list-page td {
+   text-wrap: wrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.shareholders-list-page {
+   // .shareholders-list-page__info
+
+   &__info {
+      font-size: 1.8rem;
+      color: #aaaab7;
+      @media (max-width: $mobile) {
+         font-size: 1.4rem;
+      }
+   }
+
+   // .shareholders-list-page__btn
+
+   &__btn {
+      margin-left: auto;
+   }
+}

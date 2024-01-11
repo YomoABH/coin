@@ -1,0 +1,250 @@
+.navigation-bar {
+   width: 100%;
+   height: 100vh;
+
+   display: flex;
+   flex: 1 1 auto;
+   flex-direction: column;
+   gap: 6.4rem;
+   overflow-y: scroll;
+   z-index: 100;
+
+   padding: 4.8rem 3.2rem;
+   background: #fff;
+
+   position: relative;
+   transition: all 0.2s linear;
+
+   @media (max-width: $pc) {
+      padding: 3.2rem 2.4rem;
+   }
+   @media (max-width: $tablet) {
+      align-items: center;
+      padding: 3.2rem 2.4rem;
+   }
+   @media (max-width: $mobile) {
+      position: fixed;
+      left: -100%;
+   }
+
+   &::-webkit-scrollbar {
+      width: 0.4rem;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: #b1c7ff;
+      border-radius: 1rem;
+   }
+
+   // .navigation-bar__logo
+
+   &__logo {
+      cursor: pointer;
+   }
+
+   // .navigation-bar__user-info
+
+   &__user-info {
+   }
+
+   // .navigation-bar__navigation
+
+   &__navigation {
+   }
+
+   &__botton-logo {
+      cursor: pointer;
+   }
+
+   &__mobile-btn {
+      display: none;
+
+      position: fixed;
+      left: 16.5rem;
+      top: 50%;
+      z-index: 100;
+      height: 5rem;
+      width: 3rem;
+
+      -webkit-border-top-right-radius: 12px;
+      -webkit-border-bottom-right-radius: 12px;
+      -moz-border-radius-topright: 12px;
+      -moz-border-radius-bottomright: 12px;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+      border: 0;
+      background-color: #4d49fe;
+
+      transition: all 0.2s linear;
+
+      img {
+         transform: rotate(90deg);
+      }
+
+      @media (max-width: $mobile) {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         z-index: 1;
+
+         left: 0;
+         transform: translate(0%, -50%);
+      }
+   }
+
+   &.active {
+      width: 18rem;
+      z-index: 100;
+      left: 0;
+      .navigation-bar__mobile-btn {
+         left: 18rem;
+         transform: translate(0%, -50%);
+      }
+   }
+}
+
+.user-info {
+   display: flex;
+   align-items: center;
+   gap: 1.6rem;
+
+   // .user-info__avatar
+
+   &__avatar {
+      width: 7.2rem;
+
+      img {
+         width: 100%;
+      }
+   }
+
+   // .user-info__fio
+   &__wp {
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+
+   &__fio {
+      font-weight: 600;
+   }
+
+   // .user-info__seo-id
+
+   &__seo-id {
+      font-weight: 600;
+   }
+}
+
+.navigation {
+   // .navigation__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+   }
+
+   // .navigation__list-iem
+
+   &__list-iem {
+   }
+}
+
+.navigation-list-item {
+   cursor: pointer;
+   // .navigation-list-item__link
+
+   &__link {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      padding: 0rem;
+      background-color: transparent;
+      border: 0;
+
+      cursor: pointer;
+   }
+
+   // .navigation-list-item__icon
+
+   &__icon {
+      width: 3.2rem;
+      height: 3.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 0.8rem;
+
+      transition: all 0.2s;
+
+      svg {
+         transition: all 0.2s;
+      }
+
+      svg.str {
+         fill: transparent;
+         stroke: #000;
+      }
+      @media (max-width: $mobile) {
+         svg {
+            transform: scale(1.2);
+         }
+         img {
+            transform: scale(1.2);
+         }
+      }
+   }
+
+   // .navigation-list-item__name
+
+   &__name {
+      font-weight: 600;
+      transition: all 0.2s;
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+
+   &.active {
+      .navigation-list-item__icon {
+         background-color: #4d49fe;
+
+         svg {
+            fill: #fff;
+         }
+
+         svg.str {
+            fill: none;
+            stroke: #fff;
+         }
+      }
+
+      .navigation-list-item__name {
+         color: #4d49fe;
+      }
+   }
+
+   @media (min-width: $tablet) {
+      &:hover {
+         .navigation-list-item__icon {
+            background-color: #4d49fe;
+            border-radius: 0.8rem;
+
+            svg {
+               fill: #fff;
+            }
+
+            svg.str {
+               fill: none;
+               stroke: #fff;
+            }
+         }
+
+         .navigation-list-item__name {
+            color: #4d49fe;
+         }
+      }
+   }
+}
