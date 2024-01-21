@@ -95,8 +95,8 @@
    &.active {
       width: 18rem;
       z-index: 100;
-      left: 0;
-      .navigation-bar__mobile-btn {
+      left: 0rem;
+      & + .navigation-bar__mobile-btn {
          left: 18rem;
          transform: translate(0%, -50%);
       }

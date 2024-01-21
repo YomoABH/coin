@@ -37,8 +37,10 @@ function handleCustomSelect(selectBox, event) {
 
 function handleCustomSelectOption(selectBox, event) {
    if (event.target.tagName === "LI") {
-      selectBox.querySelector(".selected-item").textContent =
-         event.target.textContent;
+      selectBox.querySelector(".selected-item").innerHTML =
+         event.target.innerHTML;
+      console.log(event.target.innerHTML);
+
       selectBox.querySelector(".options").style.display = "none";
    }
 }
@@ -51,4 +53,3 @@ function handleDocumentClick(event) {
       }
    });
 }
-7405540;
